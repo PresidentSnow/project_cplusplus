@@ -92,6 +92,11 @@ int main()
     //employee2.Company = "Amazon";
     //employee2.Age = 32;
     employee2.IntroduceYourself();
+
+    std::cout << "\n";
+
+    Employee employee3 = Employee("Pepe", "Oracle", 27);
+    employee3.IntroduceYourself();
     
     employee1.setAge(25);
     // this stdout is: Jav is 25 years old
