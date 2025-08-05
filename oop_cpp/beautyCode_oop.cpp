@@ -112,10 +112,15 @@ public:
     {
         std::cout << Name << " fixed bug using " << FavProgrammingLanguage << std::endl;
     }
+    void Work()
+    {
+        std::cout << Name << " is writting" << FavProgrammingLanguage << " code" << std::endl;
+    }
 };
 
 class Teacher : public Employee
 {
+
 public:
     std::string Subject;
     void PrepareLesson()
@@ -129,18 +134,19 @@ public:
     {
         Subject = subject;
     }
+    void Work()
+    {
+        std::cout << Name << " is teaching " << Subject << std::endl;
+    }
 };
 
 int main()
 {
     Developer d = Developer("Gabriel", "Amazon", 28, "C++");
-    d.FixBug();
-    d.AskForPromotion();
-
     Teacher t = Teacher("Josep", "Telefonica", 24, "Mathematics");
-    t.PrepareLesson();
-    t.AskForPromotion();
 
+    Employee* e1 = &d; // pointer
+    Employee* e2 = &t;
     /*
     // Employee employee1 = Employee("Javi", "Nvidia", 18); // use the Constructor
     //employee1.Name = "Javi";
