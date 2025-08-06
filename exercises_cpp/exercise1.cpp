@@ -69,9 +69,22 @@ int size_data_type()
 }
 
 // Write a C++ program that calculates the volume of a sphere.
+// Formula: (4/3) · π · r^3 [radius to the three power]
 int volume_sphere()
 {
-    return 0;
+    double r; // base number
+    double pi = 3.14159; // π pi number
+
+    std::cout << "\n Let's calculate the volume of a sphere!! \n";
+    std::cout << "Please, enter the radius number: ";
+    std::cin >> r;
+    std::cout << "\n";
+
+    double formula = (4.00 / 3.00) * pi * pow(r,3);
+
+    // output result
+    std::cout << "The volume of a sphere is: " << formula << std::endl;
+    return formula;
 }
 
 // Write a C++ program that calculates the volume of a cube. 
@@ -122,6 +135,6 @@ int unit_conversion_time()
 
 int main()
 {
-    size_data_type();
+    volume_sphere();
     return 0;
 }
