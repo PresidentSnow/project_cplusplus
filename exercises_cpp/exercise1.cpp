@@ -10,7 +10,25 @@
 // fibonacci numbers sequence
 int fibonacci_sequence()
 {
-    int i = 0;
+    int term1 = 0;
+    int term2 = 1;
+    int n; // Number of times we want the sequence to be done
+    int nextTerm = 0; // next term in the sequence
+
+    std::cout << "Number of terms: ";
+    std::cin >> n;
+
+    std::cout << term1 << ", " << term2 << ", ";
+
+    for (int i = 3; i <= n; i++)
+    {
+        nextTerm = term1 + term2;
+        std::cout << nextTerm;
+        if (i != n) std::cout << ", ";
+        term1 = term2;
+        term2 = nextTerm;
+    }
+    std::cout << std::endl;
     return 0;
 }
 
@@ -135,6 +153,6 @@ int unit_conversion_time()
 
 int main()
 {
-    volume_sphere();
+    fibonacci_sequence();
     return 0;
 }
