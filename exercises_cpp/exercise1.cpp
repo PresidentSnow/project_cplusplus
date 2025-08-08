@@ -91,7 +91,7 @@ int size_data_type()
 int volume_sphere()
 {
     double r; // base number
-    double pi = 3.14159; // π pi number
+    const double pi = 3.14159; // π pi number
 
     std::cout << "\n Let's calculate the volume of a sphere!! \n";
     std::cout << "Please, enter the radius number: ";
@@ -108,30 +108,64 @@ int volume_sphere()
 // Write a C++ program that calculates the volume of a cube. 
 int volume_cube()
 {
+    double s;
+
+    std::cout << "Please, introduce the size of the cube: ";
+    std::cin >> s;
+    std::cout << "\n";
+
+    // Check if the input is valid
+    if (s < 0) {
+        std::cout << "Size cannot be negative." << std::endl;
+        return 1; // Return an error code
+    }
+
+    double total = std::pow(s, 3);
+
+    std::cout << "The volume of a cube is: " << total << std::endl;
     return 0;
 }
 
 // Write a C++ program that calculates the volume of a cylinder. 
 int volume_cylinder()
 {
+    const double pi = 3.14159; // π pi number
+
+    float r; // radius num
+    float h; // height of the cylinder
+
+    std::cout << "Please, enter the radius number: ";
+    std::cin >> r;
+    std::cout << "\n";
+    std::cout << "Now, introduce the height of the cylinder: ";
+    std::cin >> h;
+    std::cout << "\n";
+
+    double volume = std::pow(r, 2) * pi * h;
+    std::cout << "The volume of a cylinder is: " << volume << std::endl;
     return 0;
 }
 
 // Write a C++ program to find the Area and Perimeter of a Rectangle. 
 int area_perimeter_rectangle()
 {
-    return 0;
-}
+    double l; // lenght
+    double w; // width
 
-// Write a C++ program to convert temperature in Celsius to Fahrenheit. 
-int convert_celsius_fahrenheit()
-{
-    return 0;
-}
+    std::cout << "Please, enter the lenght of the rectangle: ";
+    std::cin >> l;
+    std::cout << "\n";
+    std::cout << "And now, enter the widht of the rectangle: ";
+    std::cin >> w;
+    std::cout << "\n";
 
-// Write a C++ program to find the total number of minutes between two given times (formatted with a colon and am or pm).
-int number_minutes_two()
-{
+    // area of the rectangle
+    double a = l * w;
+    std::cout << "The are of the rectangle is: " << a << std::endl;
+
+    // perimeter of the rectangle
+    double p = 2 * (l + w);
+    std::cout << "The perimeter of the rectangle is: " << p << std::endl;
     return 0;
 }
 
@@ -145,14 +179,8 @@ int digits_between_two_integers()
     return 0;
 }
 
-// unit conversion time (second, minute, hour, etc...)
-int unit_conversion_time()
-{
-    return 0;
-}
-
 int main()
 {
-    fibonacci_sequence();
+    area_perimeter_rectangle();
     return 0;
 }
