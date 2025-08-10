@@ -50,7 +50,9 @@ int fibonacci_sequence()
 */
 int hell_numbers()
 {
-    int i = 6;
+    int x = 20;
+    int y = 25;
+    int digit_sum = 0; // manage the the sum of the numbers
     return 0;
 }
 
