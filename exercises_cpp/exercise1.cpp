@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string> // Allow use string tasks
 #include <cmath> // Library wiht mathematical tasks
+#include <algorithm> // perform modify ranges of data from data structures
 
 /* Info about the folder below:
 // Folder for manage the cpp exercises.
@@ -235,13 +236,34 @@ int rev_nums()
     return 0;
 }
 
-// reverse string
+// reverse string wiht reverse()
 int rev_str()
 {
+    std::string str = "Lee is the best";
+    // Reverse the string using the std::reverse() 
+    reverse(str.begin(), str.end());
+    
+    std::cout << str << std::endl;
+    return 0;
+}
+
+// reverse string by swapping characters
+int rev_swapping_characters()
+{
+    std::string str = "I still there.";
+    char ch;
+
+    for(int index = 0, len = str.length(); index < len/2; index++)
+    {
+        ch = str[index];
+        str[index] = str[len-1-index];
+        str[len-1-index] = ch;
+    }
+    std::cout << str << std::endl;
     return 0;
 }
 int main()
 {
-    rev_nums();
+    rev_swapping_characters();
     return 0;
 }
