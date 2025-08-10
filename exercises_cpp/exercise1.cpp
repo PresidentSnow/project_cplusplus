@@ -248,9 +248,10 @@ int rev_str()
 }
 
 // reverse string by swapping characters
+// This is from: https://www.tutorialkart.com/cpp/cpp-string-reverse/
 int rev_swapping_characters()
 {
-    std::string str = "I still there.";
+    std::string str = "Tenet.";
     char ch;
 
     for(int index = 0, len = str.length(); index < len/2; index++)
@@ -262,8 +263,41 @@ int rev_swapping_characters()
     std::cout << str << std::endl;
     return 0;
 }
+
+// reverse string by copying string from right to left into a new string
+int rev_right_left()
+{
+    using namespace std;
+
+    string str = "And still, I rise.";
+    char rev[str.length()];
+
+    for (int index = 0, len = str.length(); (index < len); index++)
+    {
+        rev[index] = str[len-1-index];
+    }
+
+    cout << rev << endl;
+
+    return 0;
+}
+
+// Reverse a string using Recursion
+void reverseString(std::string& str, int n, int i) {
+   if (n <= i) {
+      return;
+   }
+   std::swap(str[i], str[n]);
+   reverseString(str, n - 1, i + 1);
+}
+
 int main()
 {
+    // this is from "reverseString"
+    std::string str = "Hello_world.";
+    reverseString(str, str.length() - 1, 0);
+    std::cout << str << std::endl;
+
     rev_swapping_characters();
     return 0;
 }
