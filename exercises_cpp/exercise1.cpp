@@ -50,9 +50,6 @@ int fibonacci_sequence()
 */
 int hell_numbers()
 {
-    int x = 20;
-    int y = 25;
-    int digit_sum = 0; // manage the the sum of the numbers
     return 0;
 }
 
@@ -178,11 +175,73 @@ int area_perimeter_rectangle()
 */
 int digits_between_two_integers()
 {
+    using namespace std;
+    int x = 40;
+    int y = 41;
+    int digit_sum = 0; // manage the the sum of the numbers
+
+    /* Code explained below:
+    // If x is 20 and y is 25. The code will do the next:
+    // it will sum the digits of 20 (2+0), 21 (2+1), 22 (2+2), 23 (2+3), 24 (2+4), and 25 (2+5),
+    // resulting in a total sum of 2 + 0 + 2 + 1 + 2 + 2 + 2 + 3 + 2 + 4 + 2 + 5 = 30.
+    */
+    if (x > y)
+    {
+        cout << "Sorry, the 1st num is greater than the 2nd.\n";
+        cout << "Try again...\n";
+        return 1;
+    }
+
+    for(int i = x; i <= y; ++i)
+    {
+        int p = i;
+        // Loop to extract digits and calculate their sum for each number between x and y
+        while(p > 0)
+        {
+            digit_sum += p % 10; // Extract the last digit of the number and add it to digit_sum
+            p /= 10; // Remove the last digit from the number
+        }
+    }
+
+   // Display the range of numbers and the sum of their digits using the 'test' function
+   cout << "Add up all the digits between " << x << " and " << y << " is: " << digit_sum << endl;
+   
     return 0;
 }
 
+// extract the reverse num
+int rev_nums()
+{
+    int num = 890;
+    int rev_num = 0; // stores the rev numbers
+    
+    while (num > 0)
+    {
+        //rev_num *= 10 + num % 10;
+        rev_num = rev_num * 10 + num % 10;
+        /* Explain of this part below: rev_num = rev_num * 10 + num % 10;
+        // If num is 123, the process would look like this:
+        // Start with rev_num = 0.
+        // First iteration: rev_num = 0 * 10 + 3 (last digit of 123) → rev_num = 3.
+        // Second iteration: rev_num = 3 * 10 + 2 (next last digit of 12) → rev_num = 32.
+        // Third iteration: rev_num = 32 * 10 + 1 (last digit of 1) → rev_num = 321.
+        // After processing all digits, rev_num will be 321, which is the reverse of 123
+        */
+        num /= 10; // Remove the last digit from the number
+    }
+
+    std::cout << "The reverse of num is: " << rev_num << std::endl;
+
+    return 0;
+}
+
+// reverse string
+int rev_str()
+{
+    return 0;
+}
 int main()
 {
-    area_perimeter_rectangle();
+    rev_nums();
     return 0;
 }
