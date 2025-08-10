@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/zsh
 
 # script for automate c++
 
 g++ pointers_test.cpp -o pointers_test
-/home/root2/projects_cpp/array_pointers_loops_cpp/pointers_test # this is executable
+/home/xavi/git_repositories/projects_cpp/array_pointers_loops_cpp/pointers_test # this is executable

@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/zsh
 
 # script for automate c++
 
 g++ test_oop.cpp -o test_oop
-/home/root2/projects_cpp/oop_cpp/test_oop # this is executable
+/home/xavi/git_repositories/projects_cpp/oop_cpp/test_oop # this is executable
