@@ -1,0 +1,69 @@
+This game is for simulate the combat between predator and alien.
+
+The goal is to create an application that is a combat simulator based on the Alien vs Predator movies.
+
+    ● The rules are:
+        ○ Casting is prohibited.
+        ○ Any function may be used.
+
+    ● The rules of the game are:
+        ○ The game world contains both aliens and predators.
+        ○ All characters (GameObjects) have these characteristics and no others.
+            ■ (A) Id (1-99): Integer. Immutable.
+            ■ (A) Attack (1-10): Integer. Immutable. Influences melee
+              attacks (to the neighboring square). Cannot change.
+            ■ (A) Defense (10-20): Integer. Immutable. Influences dodging attacks. Cannot change.
+            ■ (A) Hit Points (10-100): Integer. This is the amount of
+              damage a character can take before falling in combat.
+
+    ○ Regarding aliens, in addition:
+        ■ Their attack deals 1-10 hit points.
+        ■ (A) Speed (0-3). Integer. This is the number of extra actions
+          an alien can perform on its turn. It is an attribute or property.
+        ■ (C) Each turn they can:
+            ● Attack
+
+    ○ Regarding predators, in addition:
+        ■ Their attack deals 1-5 hit points.
+        ■ (E) 1-4 healing potions. Each of these restores a random number of 2-20 hit points.
+        ■ (F) Disc. When the predator uses the disc, there is a 70% chance that the disc will return to
+          the predator, and a 30% chance that it will be lost forever. This attack deals 1-10 hit points.
+        ■ (E) Camouflage. This will last for 10 turns. While active, it will be harder for aliens to see
+          it, meaning an alien has a 20% chance of seeing that predator that turn. After using it, it will
+          have to go 5 turns without being able to use it. ■ (C) On each turn they can:
+            ● (A) Attack.
+            ● Use a potion.
+            ● Attack with the disc.
+            ● Activate camouflage.
+
+The classes that must be implemented are the following:
+
+    ● IBattlefield
+        ○ (A) ObjectCount
+        ○ (A) GetObjectAt(index)
+        ○ (A) ExecuteTurn() → When a character's hit points
+          reach 0, it must be removed from the battlefield
+        ○ Visit(objects)
+
+    ● IGameObject 
+        ○ (A) ExecuteTurn(IBattlefield)
+        ○ (A) AddLifePoints(int)
+        ○ (A) GetAttack() → If it is an alien, 2 will be added (A) GetDefense() → If it is a predator, 2 will be added
+
+    ● Battlefield
+        ○ (A) There can't be 2 characters with the same id
+        ○ (A) It has a list of IGameObject and absolutely nothing else
+    ● GameObject
+    ● Predator
+    ● Alien
+
+    ● Utils
+        ○ (D) PrintBattlefield(battlefield) → will print the status of each 
+          character (health, id, whether it's an alien or a predator, ...).
+
+Notes 
+    ● To resolve an attack, do the following: 
+        ○ The attacker rolls a 20-point die (1-20).
+        ○ Adds their attack power to their roll.
+        ○ If the result is greater than or equal to the 
+          opponent's defense, the attack is successful.
