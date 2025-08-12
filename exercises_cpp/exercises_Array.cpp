@@ -17,12 +17,17 @@ int find_largest_array()
 
     int n = sizeof(nums) / sizeof(nums[0]); // determining the number of elements in the array
     int largest = nums[0]; // initialize largest with the first element (in this case, 10)
+    int smallest = nums[0];
 
     for (int i = 1; i < n; i++) // start from 1 since we already used nums[0]
     {
         if (nums[i] > largest)
         {
             largest = nums[i]; // update largest if current element is greater
+        }
+        if (nums[i] < smallest) // this check which element is smallest
+        {
+            smallest = nums[i];
         }
     }
 
@@ -55,14 +60,19 @@ int find_largest_array()
     */
 
     std::cout << "The largest element of the array is: " << largest << std::endl;
+    std::cout << "The smallest element of the array is: " << smallest << std::endl;
     return 0;
 }
 
-// C++ Program to Find Second Largest and Smallest Elements of an Array.
+// Find the largest three elements in an array. 
 
 
 // C++ Program to Remove Duplicate Elements from Array.
-
+int duplicate_element()
+{
+    int nums[10] = {2, 3, 10, 12, 5, 8, 2, 8, 9, 1};
+    return 0;
+}
 
 // C++ Program to Merge Two Arrays.
 
