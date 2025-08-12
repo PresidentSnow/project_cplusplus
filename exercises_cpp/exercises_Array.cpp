@@ -1,0 +1,108 @@
+#include <iostream>
+#include <string> // Allow use string tasks
+#include <cmath> // Library wiht mathematical tasks
+#include <algorithm> // perform modify ranges of data from data structures
+
+/* Info about the folder below:
+// Folder for manage the cpp exercises.
+// From: https://www.sanfoundry.com/cpp-programs/#cpp-programs-array
+// And: https://www.w3resource.com/cpp-exercises/array/index.php
+*/
+
+
+// C++ Program to Find Largest and Smallest Element of an Array.
+int find_largest_array()
+{
+    int nums[5] = {10, 2, 4, 9, 11};
+
+    int n = sizeof(nums) / sizeof(nums[0]); // determining the number of elements in the array
+    int largest = nums[0]; // initialize largest with the first element (in this case, 10)
+
+    for (int i = 1; i < n; i++) // start from 1 since we already used nums[0]
+    {
+        if (nums[i] > largest)
+        {
+            largest = nums[i]; // update largest if current element is greater
+        }
+    }
+
+    /* Iteration breakdown
+    Given the array: nums[5] = {10, 2, 4, 9, 11}
+
+    // Initialization:
+        Set largest to the first element: largest = 10
+
+    // Iteration 1 (i = 1):
+        Current element: nums[1] = 2
+        Compare: 2 < 10 (no change)
+        largest remains 10
+
+    // Iteration 2 (i = 2):
+        Current element: nums[2] = 4
+        Compare: 4 < 10 (no change)
+        largest remains 10
+
+    // Iteration 3 (i = 3):
+        Current element: nums[3] = 9
+        Compare: 9 < 10 (no change)
+        largest remains 10
+
+    // Iteration 4 (i = 4):
+        Current element: nums[4] = 11
+        Compare: 11 > 10 (update)
+        Update largest to 11
+
+    */
+
+    std::cout << "The largest element of the array is: " << largest << std::endl;
+    return 0;
+}
+
+// C++ Program to Find Second Largest and Smallest Elements of an Array.
+
+
+// C++ Program to Remove Duplicate Elements from Array.
+
+
+// C++ Program to Merge Two Arrays.
+
+
+// C++ Program to Find Sum and Product of Array Elements.
+
+
+// C++ Program to Print the Element at a Given Position.
+
+
+// C++ Program to Find Closest Pair of Points in an Array.
+
+
+// C++ Program to Implement Bit Array.
+
+
+// C++ Program to Implement Variable Length Array.
+
+
+// C++ Program to Implement Parallel Array.
+
+
+// C++ Program to Implement Sorted Array.
+
+
+// C++ Program to Implement Sparse Array.
+
+
+// C++ Program to Implement Suffix Array.
+
+
+// C++ Program to Illustrate use of ValArray.
+
+
+// C++ Program to Calculate Inner Product of Two Valarrays.
+
+
+
+int main()
+{
+    find_largest_array();
+    return 0;
+}
