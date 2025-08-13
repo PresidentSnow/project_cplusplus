@@ -65,7 +65,34 @@ int find_largest_array()
 }
 
 // Find the largest three elements in an array. 
+void largest_three()
+{
+    int nums[6] = {8, 12, 20, 2, 9, 7};
+    int first_num = nums[0], second_num = nums[1], thir_num = nums[2];
 
+    int n = sizeof(nums) / sizeof(nums[0]); // determining the number of elements in the array
+
+    for (int i = 0; i < n; i++)
+    {
+        if (nums[i] > first_num)
+        {
+            thir_num = second_num;
+            second_num = first_num;
+            first_num = nums[i];
+        }
+        else if (nums[i] > second_num)
+        {
+            thir_num = second_num;
+            second_num = nums[i];
+        }
+        else if (nums[i] > thir_num)
+        {
+            thir_num = nums[i];
+        }
+    }
+
+    std::cout << "The three largest elements are: " << first_num << " , " << second_num << " , " << thir_num << "\n";
+}
 
 // C++ Program to Remove Duplicate Elements from Array.
 int duplicate_element()
@@ -113,6 +140,6 @@ int duplicate_element()
 
 int main()
 {
-    find_largest_array();
+    largest_three();
     return 0;
 }
