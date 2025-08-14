@@ -31,7 +31,7 @@ int find_largest_array()
         }
     }
 
-    /* Iteration breakdown
+    /* Iteration breakdown: 
     Given the array: nums[5] = {10, 2, 4, 9, 11}
 
     // Initialization:
@@ -95,14 +95,106 @@ void largest_three()
 }
 
 // C++ Program to Remove Duplicate Elements from Array.
-int duplicate_element()
+void duplicate_element()
 {
-    int nums[10] = {2, 3, 10, 12, 5, 8, 2, 8, 9, 1};
-    return 0;
+    int A[6] = {2, 3, 10, 12, 2, 2};
+    int n = sizeof(A) / sizeof(A[0]); // determining the number of elements in the array
+
+    int B[12]; // Increased size to accommodate duplicates
+    int k = 0; // Start with an empty array B. Number of unique elements in B)
+
+    for (int i = 0; i < n; i++)
+    {
+        bool found = false; // Flag to check if A[i] is already in B
+        for (int j = 0; j < k; j++)
+        {
+            if (A[i] == B[j])
+            {
+                found = true; // Element already exists in B
+                break;
+            }
+        }
+        if (!found) // If not found, add to B
+        {
+            B[k] = A[i]; // Use assignment operator
+            k++;
+        }
+    }
+
+    /* Iteration breakdown: 
+    Initial Setup
+
+    Array A: {2, 3, 10, 12}
+    Size of A (n): 10
+    Array B: {} (initially empty)
+    k: 0 (number of unique elements in B)
+
+    Iteration Breakdown
+    Iteration 1: i = 0
+
+    Current Element (A[0]): 2
+    Found: false
+    Inner Loop: No elements in B to check.
+    Action: Add 2 to B.
+    Array B: {2}
+    k: 1
+
+    Iteration 2: i = 1
+
+    Current Element (A[1]): 3
+    Found: false
+    Inner Loop: Check B[0] (which is 2).
+    Action: Add 3 to B.
+    Array B: {2, 3}
+    k: 2
+
+    Iteration 3: i = 2
+
+    Current Element (A[2]): 10
+    Found: false
+    Inner Loop: Check B[0] (2) and B[1] (3).
+    Action: Add 10 to B.
+    Array B: {2, 3, 10}
+    k: 3
+
+    Iteration 4: i = 3
+
+    Current Element (A[3]): 12
+    Found: false
+    Inner Loop: Check B[0] (2), B[1] (3), and B[2] (10).
+    Action: Add 12 to B.
+    Array B: {2, 3, 10, 12}
+    k: 4
+    */
+
+    std::cout << "Repeated elements after deletion: ";
+    for (int i = 0; i < k; i++)
+    {
+        std::cout << B[i] << " "; // Added curly braces for clarity
+    }
+    std::cout << std::endl; // Added newline for better output formatting
 }
 
 // C++ Program to Merge Two Arrays.
+void merge_twoArray()
+{
+    int A[5] = {0, 1, 2, 3, 4};
+    int n = sizeof(A) / sizeof(A[0]); // determining the number of elements in the array A
 
+    int B[5] = {5, 6, 7, 8, 9};
+    int m = sizeof(B) / sizeof(B[0]); // determining the number of elements in the array B
+
+    int C[10]; // array to store the merge two arrays
+    int j = sizeof(C) / sizeof(C[0]); // determining the number of elements in the array C
+
+    for (int i = 0; i < n; i++)
+    {
+        if (A[i] < B[i])
+        {
+            C[j++] = A[i++];
+        }
+    }
+}
 
 // C++ Program to Find Sum and Product of Array Elements.
 
@@ -140,6 +232,6 @@ int duplicate_element()
 
 int main()
 {
-    largest_three();
+    merge_twoArray();
     return 0;
 }
