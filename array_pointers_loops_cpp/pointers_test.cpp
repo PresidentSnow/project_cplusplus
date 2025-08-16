@@ -34,9 +34,36 @@ void pointers_strings()
     std::cout << name << "\n";
 }
 
+void print_number(int *numberPtr)
+{
+    std::cout << *numberPtr << std::endl;
+}
+
+void print_letter(char *numberLetter)
+{
+    std::cout << *numberLetter << std::endl;
+}
+
+void print(void *ptr, char type)
+{
+    switch (type)
+    {
+    case 'i':std::cout << *((int*)ptr) << std::endl; break;
+    case 'c':std::cout << *((char*)ptr) << std::endl; break;
+    }
+}
+
 int main()
 {
     //pointers_strings();
-    test_pointers();
+    //test_pointers();
+
+    // this is from void pointer
+    int num = 5;
+    char letter = 'a';
+    /*print_number(&num);
+    //print_letter(&letter);*/
+    print(&num, 'i');
+    print(&letter, 'c');
     return 0;
 }
