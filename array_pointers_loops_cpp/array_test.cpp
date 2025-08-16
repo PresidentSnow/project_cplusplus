@@ -136,8 +136,74 @@ void ships_game()
     std::cout << "You won in " << numberOfTurns << " turns";
 }
 
+// pointers and array
+int ptrArray()
+{
+    int nums[5] = {0, 1, 2, 3, 4};
+    /*std::cout << "The address of the Array is: " << nums << std::endl;
+    std::cout << &nums[0] << "\n";
+    std::cout << &nums[1] << "\n";
+    std::cout << &nums[2] << "\n";
+    std::cout << &nums[3] << "\n";
+    std::cout << &nums[4] + 1 << "\n";*/
+
+    std::string cars[5] = {"BMW", "Hyundai", "Jaguar", "Aston Martin", "SEAT"};
+    int cars_size = sizeof(cars) / sizeof(cars[0]);
+
+    std::cout << "The size of the cars array is: " << cars_size << "\n";
+
+    return 0;
+}
+
+// multiple values from a function using pointers
+
+int getMax(int numbers[], int size)
+{
+    int max = numbers[0];
+    for (int i = 1; i < size; i++)
+    {
+        if (numbers[i] > max)
+        {
+            max = numbers[i];
+        }
+    }
+    return max;
+}
+
+int getMin(int numbers[], int size)
+{
+    int min = numbers[0];
+    for (int i = 1; i < size; i++)
+    {
+        if (numbers[i] < min)
+        {
+            min = numbers[i];
+        }
+    }
+    return min;
+}
+
+void getMin_and_Max(int numbers[], int size, int *min, int *max)
+{
+    for (int i = 1; i < size; i++)
+    {
+        if (numbers[i] > *max)
+            *max = numbers[i];
+        if (numbers[i] < *min)
+            *min = numbers[i];
+    }
+}
+
 int main ()
 {
-    ships_game();
+    int numbers[5] = {5, 4, -2, 29, 6};
+    /*std::cout << "The minimum number of the array is: " << getMin(numbers, 5) << std::endl;
+    //std::cout << "The maximum number of the array is: " << getMax(numbers, 5) << std::endl;*/
+    int min = numbers[0];
+    int max = numbers[0];
+    getMin_and_Max(numbers, 5, &min, &max);
+    std::cout << "The minimum number of the array is: " << min << std::endl;
+    std::cout << "The maximum number of the array is: " << max << std::endl;
+
     return 0;
 }
