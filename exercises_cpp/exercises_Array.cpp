@@ -179,21 +179,118 @@ void duplicate_element()
 void merge_twoArray()
 {
     int A[5] = {0, 1, 2, 3, 4};
-    int n = sizeof(A) / sizeof(A[0]); // determining the number of elements in the array A
+    int n = sizeof(A) / sizeof(A[0]); // Num of elements in the array A
 
-    int B[5] = {5, 6, 7, 8, 9};
-    int m = sizeof(B) / sizeof(B[0]); // determining the number of elements in the array B
+    int B[5] = {4, 6, 7, 8, 9};
+    int m = sizeof(B) / sizeof(B[0]); // Num of elements in the array B
 
-    int C[10]; // array to store the merge two arrays
-    int j = sizeof(C) / sizeof(C[0]); // determining the number of elements in the array C
+    int C[10]; // Array to store the merge two arrays
+    int k = 0; // Index for array C
 
-    for (int i = 0; i < n; i++)
+    int i = 0, j = 0; // Index for arrays A and B
+
+    /*// Merging the two arrays
+    // while loop that continues until one of the arrays is fully traversed*/
+    while (i < n && j < m)
     {
-        if (A[i] < B[i])
+        if (A[i] < B[j])
         {
-            C[j++] = A[i++];
+            // Check for duplicates before adding
+            bool isDuplicate = false;
+            for (int x = 0; x < k; x++)
+            {
+                if (C[x] == A[i])
+                {
+                    isDuplicate = true;
+                    break;
+                }
+            }
+            if (!isDuplicate)
+            {
+                C[k++] = A[i];
+            }
+            i++;
+        }
+        else
+        {
+            // Check for duplicates before adding
+            bool isDuplicate = false;
+            for (int x = 0; x < k; x++)
+            {
+                if (C[x] == B[j])
+                {
+                    isDuplicate = true;
+                    break;
+                }
+            }
+            if (!isDuplicate)
+            {
+                C[k++] = B[j];
+            }
+            j++;
         }
     }
+
+    // If there are remaining elements in A
+    while (i < n) 
+    {
+        bool isDuplicate = false;
+        for (int x = 0; x < k; x++)
+        {
+            if (C[x] == A[i])
+            {
+                isDuplicate = true;
+                break;
+            }
+        }
+        if (!isDuplicate)
+        {
+            C[k++] = A[i];
+        }
+        i++;
+    }
+
+    // If there are remaining elements in B
+    while (j < m) 
+    {
+        bool isDuplicate = false;
+        for (int x = 0; x < k; x++)
+        {
+            if (C[x] == B[j])
+            {
+                isDuplicate = true;
+                break;
+            }
+        }
+        if (!isDuplicate)
+        {
+            C[k++] = B[j];
+        }
+        j++;
+    }
+
+    // Output original both arrays (A and B)
+    std::cout << "The elements of the array A: ";
+    for (int i = 0; i < n; i++)
+    {
+        std::cout << A[i] << " ";
+    }
+    std::cout << std::endl;
+
+    std::cout << "The elements of the array B: ";
+    for (int i = 0; i < m; i++)
+    {
+        std::cout << B[i] << " ";
+    }
+    std::cout << std::endl;
+
+    // Output the merged array
+    std::cout << "Merged both array: ";
+    for (int x = 0; x < k; x++)
+    {
+        std::cout << C[x] << " ";
+    }
+    std::cout << std::endl;
 }
 
 // C++ Program to Find Sum and Product of Array Elements.
