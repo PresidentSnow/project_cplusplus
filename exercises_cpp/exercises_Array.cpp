@@ -9,7 +9,6 @@
 // And: https://www.w3resource.com/cpp-exercises/array/index.php
 */
 
-
 // C++ Program to Find Largest and Smallest Element of an Array.
 int find_largest_array()
 {
@@ -251,7 +250,7 @@ void merge_twoArray()
     }
 
     // If there are remaining elements in B
-    while (j < m) 
+    while (j < m)
     {
         bool isDuplicate = false;
         for (int x = 0; x < k; x++)
@@ -294,7 +293,21 @@ void merge_twoArray()
 }
 
 // C++ Program to Find Sum and Product of Array Elements.
+void sum_productArray()
+{
+    int A[5] = {1, 3, 5, 7, 9};
+    int n = sizeof(A) / sizeof(A[1]); // Num of elements of the Array A
+    int sum = 0, product = 1;
+    
+    for (int i = 0; i < n; i++)
+    {
+        sum += A[i];
+        product *= A[i];
+    }
 
+    std::cout << "The sum of the Array elements is: " << sum << std::endl;
+    std::cout << "The product of the Array elements is: " << product << std::endl;
+}
 
 // C++ Program to Print the Element at a Given Position.
 
@@ -312,7 +325,33 @@ void merge_twoArray()
 
 
 // C++ Program to Implement Sorted Array.
+void sorted_array()
+{
+    int A[6] = {9, 1, 2, 3, -1, 10};
+    int n = sizeof(A) / sizeof(A[1]);
 
+    int B[6];
+    int m = sizeof(B) / sizeof(B[1]);
+
+    // Bubble sort algorithm
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (A[j] > A[j + 1]) {
+                // Swap A[j] and A[j + 1]
+                int temp = A[j];
+                A[j] = A[j + 1];
+                A[j + 1] = temp;
+            }
+        }
+    }
+
+    // Output the sorted array
+    std::cout << "Sorted array: ";
+    for (int i = 0; i < n; i++) {
+        std::cout << A[i] << " ";
+    }
+    std::cout << std::endl;
+}
 
 // C++ Program to Implement Sparse Array.
 
@@ -329,6 +368,9 @@ void merge_twoArray()
 
 int main()
 {
-    merge_twoArray();
+    //merge_twoArray();
+    sum_productArray();
+    std::cout << "\n";
+    sorted_array();
     return 0;
 }
