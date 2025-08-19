@@ -310,7 +310,25 @@ void sum_productArray()
 }
 
 // C++ Program to Print the Element at a Given Position.
+void given_position()
+{
+    char A[10] = {"Hola2,%Mj"};
+    int n = sizeof(A) / sizeof(A[1]);
+    int pos; // position of the element for find
 
+    std::cout << "\nEnter the position (1 to " << n << "): ";
+    std::cin >> pos;
+
+    // Validate the position
+    if (pos < 1 || pos > n) 
+    {
+        std::cout << "Invalid position! Please enter a position between 1 and " << n << ".\n";
+        return; // Exit the function if the position is invalid
+    }
+
+    // Print the element at the given position (adjusting for zero-based index)
+    std::cout << "Element at position " << pos << " is: " << A[pos - 1] << std::endl; // pos - 1 for zero-based index
+}
 
 // C++ Program to Find Closest Pair of Points in an Array.
 
@@ -327,16 +345,19 @@ void sum_productArray()
 // C++ Program to Implement Sorted Array.
 void sorted_array()
 {
-    int A[6] = {9, 1, 2, 3, -1, 10};
+    int A[5] = {64, 34, 25, 12, 22};
     int n = sizeof(A) / sizeof(A[1]);
 
-    int B[6];
+    int B[5];
     int m = sizeof(B) / sizeof(B[1]);
 
     // Bubble sort algorithm
-    for (int i = 0; i < n - 1; i++) {
-        for (int j = 0; j < n - i - 1; j++) {
-            if (A[j] > A[j + 1]) {
+    for (int i = 0; i < n - 1; i++) 
+    {
+        for (int j = 0; j < n - i - 1; j++) 
+        {
+            if (A[j] > A[j + 1]) 
+            {
                 // Swap A[j] and A[j + 1]
                 int temp = A[j];
                 A[j] = A[j + 1];
@@ -344,6 +365,35 @@ void sorted_array()
             }
         }
     }
+
+    /* Step by step example below:
+    // Take an array of numbers "5 1 4 2 8", and sort the array from
+    // lowest number to greatest number using bubble sort.
+    // In each step, elements written in bold are being compared. 
+    // Three passes will be required;
+
+    -First Pass
+    ( 5 1 4 2 8 ) → ( 1 5 4 2 8 ), Here, algorithm compares the first two elements, and swaps since 5 > 1.
+    ( 1 5 4 2 8 ) → ( 1 4 5 2 8 ), Swap since 5 > 4
+    ( 1 4 5 2 8 ) → ( 1 4 2 5 8 ), Swap since 5 > 2
+    ( 1 4 2 5 8 ) → ( 1 4 2 5 8 ), Now, since these elements are already in order (8 > 5), algorithm does not swap them.
+    
+    -Second Pass
+    ( 1 4 2 5 8 ) → ( 1 4 2 5 8 )
+    ( 1 4 2 5 8 ) → ( 1 2 4 5 8 ), Swap since 4 > 2
+    ( 1 2 4 5 8 ) → ( 1 2 4 5 8 )
+    ( 1 2 4 5 8 ) → ( 1 2 4 5 8 )
+
+    // Now, the array is already sorted, but the algorithm does
+    // not know if it is completed. The algorithm needs one
+    // additional whole pass without any swap to know it is sorted.
+
+    -Third Pass
+    ( 1 2 4 5 8 ) → ( 1 2 4 5 8 )
+    ( 1 2 4 5 8 ) → ( 1 2 4 5 8 )
+    ( 1 2 4 5 8 ) → ( 1 2 4 5 8 )
+    ( 1 2 4 5 8 ) → ( 1 2 4 5 8 )
+    */
 
     // Output the sorted array
     std::cout << "Sorted array: ";
@@ -369,8 +419,10 @@ void sorted_array()
 int main()
 {
     //merge_twoArray();
-    sum_productArray();
-    std::cout << "\n";
+    //sum_productArray();
+    //std::cout << "\n";
     sorted_array();
+    std::cout << "\n";
+    given_position();
     return 0;
 }
