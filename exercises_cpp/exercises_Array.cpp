@@ -331,16 +331,36 @@ void given_position()
 }
 
 // C++ Program to Find Closest Pair of Points in an Array.
+// Solution: https://www.sanfoundry.com/cpp-program-find-closest-pair-points-array/
 
 
 // C++ Program to Implement Bit Array.
 
 
-// C++ Program to Implement Variable Length Array.
-
-
+/* Info below:
 // C++ Program to Implement Parallel Array.
+// A group of parallel arrays (also known as
+// structure of arrays or SoA) is a form of
+// implicit data structure that uses multiple
+// arrays to represent a singular array of records.
+// Info from: https://www.geeksforgeeks.org/dsa/parallel-array/
+*/
+void parallel_array()
+{
+    const int numEstudiantes = 3;
+    std::string nombres[numEstudiantes] = {"Ana", "Luis", "Carlos"};
+    int edades[numEstudiantes] = {20, 22, 21};
+    float notas[numEstudiantes] = {8.5, 9.0, 7.5};
 
+    for (int i = 0; i < numEstudiantes; i++) 
+    {
+        std::cout << "Estudiante " << (i + 1) << ":\n";
+        std::cout << "Nombre: " << nombres[i] << "\n";
+        std::cout << "Edad: " << edades[i] << "\n";
+        std::cout << "Nota: " << notas[i] << "\n";
+        std::cout << "-------------------\n";
+    }
+}
 
 // C++ Program to Implement Sorted Array.
 void sorted_array()
@@ -423,6 +443,7 @@ int main()
     //std::cout << "\n";
     sorted_array();
     std::cout << "\n";
-    given_position();
+    //given_position();
+    parallel_array();
     return 0;
 }
