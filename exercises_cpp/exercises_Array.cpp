@@ -2,6 +2,7 @@
 #include <string> // Allow use string tasks
 #include <cmath> // Library wiht mathematical tasks
 #include <algorithm> // perform modify ranges of data from data structures
+#include <valarray> // valarray provide mathematical operations on arrays efficiently.
 
 /* Info about the folder below:
 // Folder for manage the cpp exercises.
@@ -423,27 +424,31 @@ void sorted_array()
     std::cout << std::endl;
 }
 
-// C++ Program to Implement Sparse Array.
-
-
 // C++ Program to Implement Suffix Array.
-
+// Info code: https://github.com/MainakRepositor/500-CPP/blob/a7d1bd0a61e0bb9db0c793adce4fb6a204054ba9/122.cpp#L13
 
 // C++ Program to Illustrate use of ValArray.
+// Use valarray library and introduced in C++ 98 
+void ilustrate_valarray()
+{
+    // Initializing valarray
+    std::valarray<int> varr = {10, 2, 20, 9, 30, 25};
 
+    // Display largest element of the valarray
+    std::cout << "The largest element of valarray is: ";
+    std::cout << varr.max() << std::endl;
 
-// C++ Program to Calculate Inner Product of Two Valarrays.
-
-
+    // Display smallest element of the valarray
+    std::cout << "The smallest element of valarray is: ";
+    std::cout << varr.min() << std::endl;
+    
+    // Display the size of the valarray
+    std::cout << "The size of the valarray is: ";
+    std::cout << varr.size() << std::endl;
+}
 
 int main()
 {
-    //merge_twoArray();
-    //sum_productArray();
-    //std::cout << "\n";
-    sorted_array();
-    std::cout << "\n";
-    //given_position();
-    parallel_array();
+    ilustrate_valarray();
     return 0;
 }
