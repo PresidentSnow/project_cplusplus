@@ -331,13 +331,6 @@ void given_position()
     std::cout << "Element at position " << pos << " is: " << A[pos - 1] << std::endl; // pos - 1 for zero-based index
 }
 
-// C++ Program to Find Closest Pair of Points in an Array.
-// Solution: https://www.sanfoundry.com/cpp-program-find-closest-pair-points-array/
-
-
-// C++ Program to Implement Bit Array.
-
-
 /* Info below:
 // C++ Program to Implement Parallel Array.
 // A group of parallel arrays (also known as
@@ -423,9 +416,6 @@ void sorted_array()
     }
     std::cout << std::endl;
 }
-
-// C++ Program to Implement Suffix Array.
-// Info code: https://github.com/MainakRepositor/500-CPP/blob/a7d1bd0a61e0bb9db0c793adce4fb6a204054ba9/122.cpp#L13
 
 // C++ Program to Illustrate use of ValArray.
 // Use valarray library and introduced in C++ 98 

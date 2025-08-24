@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string> // Allow use string tasks
-#include <cmath> // Library wiht mathematical tasks
 #include <algorithm> // perform modify ranges of data from data structures
 
 /* Info about the folder below:
@@ -167,8 +166,155 @@ void subtract_two_matrices()
     }
 }
 
+// The program takes a matrix and prints the transpose of the matrix.
+// In a transpose matrix, rows become columns and vice versa.
+void transpose_matrices()
+{
+    int A[3][3] =
+    {
+        {9, 5, 0},
+        {7, 4, 2},
+        {3, 6, 3}
+    };
+
+    // sizeof of the array A
+    int rows_A = sizeof(A) / sizeof(A[0]);
+    int cols_A = sizeof(A[0]) / sizeof(A[0][0]);
+
+    // print matrix A
+    std::cout << "Matrix A: \n";
+    for (int i = 0; i < rows_A; i++)
+    {
+        for (int j = 0; j < cols_A; j++)
+        {
+            std::cout << A[i][j] << "\t";
+        }
+        std::cout << "\n";
+    }
+
+    std::cout << "\n";
+
+    // print transpose matrix
+    std::cout << "Matrix A transposed: \n";
+    for (int i = 0; i < rows_A; i++)
+    {
+        for (int j = 0; j < cols_A; j++)
+        {
+            std::cout << A[j][i] << "\t";
+        }
+        std::cout << "\n";
+    }
+}
+
+/*Info below:
+// C++ Program to Find Determinant of a Matrix.
+// A determinant is a value associated with a
+// square matrix. It can be computed from the
+// entries of the matrix by a specific arithmetic
+// expression, while other ways to determine its
+// value exist as well.
+*/
+void find_determinant_matrix()
+{
+
+}
+
+// This is a C++ Program to find the basis and dimension of the given matrix.
+void basis_dimension_matrix()
+{
+
+}
+
+// C++ program to add the rows of a matrix.
+void add_rows_matrix()
+{
+    int A[3][3] =
+    {
+        {2, 4, 9},
+        {12, 3, 6},
+        {1, 0, 7}
+    };
+
+    // sizeof of the array A
+    int rows_A = sizeof(A) / sizeof(A[0]);
+    int cols_A = sizeof(A[0]) / sizeof(A[0][0]);
+
+    // Array to store the sum of each row
+    int rowSums[3] = {0};
+
+    // print matrix A
+    std::cout << "Matrix A: \n";
+    for (int i = 0; i < rows_A; i++)
+    {
+        for (int j = 0; j < cols_A; j++)
+        {
+            std::cout << A[i][j] << "\t";
+        }
+        std::cout << "\n";
+    }
+
+    // Loop through each row
+    for (int i = 0; i < rows_A; i++)
+    {
+        // Sum the elements of the current row
+        for (int j = 0; j < cols_A; j++)
+        {
+            rowSums[i] += A[i][j];
+        }
+    }
+
+    std::cout << "\n";
+
+    // print the sum of the rows of Matrix A
+    for (int i = 0; i < rows_A; i++)
+    {
+        std::cout << "Sum of row " << i + 1 << ": " << rowSums[i] << std::endl;
+    }
+}
+
+// C++ program to add the cols of a matrix.
+void add_cols_matrix()
+{
+    int A[3][3] =
+    {
+        {2, 6, 19},
+        {7, 9, 0},
+        {15, 1, 5}
+    };
+
+    int rows_A = sizeof(A) / sizeof(A[0]);
+    int cols_A = sizeof(A[0]) / sizeof(A[0][0]);
+
+    int sumCols[3] = {0};
+
+    for (int i = 0; i < rows_A; i++)
+    {
+        for (int j = 0; j < cols_A; j++)
+        {
+            std::cout << A[i][j] << "\t";
+        }
+        std::cout << "\n";
+    }
+
+    for (int i = 0; i < rows_A; i++)
+    {
+        for (int j = 0; j < cols_A; j++)
+        {
+            sumCols[j] += A[i][j];
+        }
+    }
+
+    std::cout << "\n";
+
+    for (int j = 0; j < cols_A; j++)
+    {
+        std::cout << "Sum of cols " << j << " : " << sumCols[j] << std::endl;
+    }
+}
+
 int main()
 {
-    subtract_two_matrices();
+    add_rows_matrix();
+    add_cols_matrix();
     return 0;
 }
